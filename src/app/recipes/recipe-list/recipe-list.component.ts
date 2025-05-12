@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import { CommonModule } from '@angular/common';
 
 import { Recipe } from '../recipes.model';
 
 @Component({
   selector: 'rb-recipe-list',
   standalone: false,
-  //imports: [CommonModule],
   templateUrl: './recipe-list.component.html',
   styleUrl: './recipe-list.component.css',
   
