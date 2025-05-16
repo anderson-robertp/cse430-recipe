@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
@@ -23,9 +25,11 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ShoppingEditComponent,
   ],
   imports: [
-    DropdownDirective,
-    BrowserModule
+    BrowserModule,
+    CommonModule,
+    FormsModule
   ],
+  //exports: [ RecipeListComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })

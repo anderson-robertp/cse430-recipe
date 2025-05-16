@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Ingredient } from '../shared/ingredient.model';
+
 @Component({
   selector: 'rb-shopping-list',
   standalone: false,
@@ -7,5 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './shopping-list.component.css'
 })
 export class ShoppingListComponent {
+  ingredients: Ingredient [] = [
+    new Ingredient('Apples', 5),
+    new Ingredient('Tomatoes', 10),
+    new Ingredient('Potatoes', 20),
+    new Ingredient('Onions', 15)
+  ];
 
+  constructor() {  }
+
+  ngOnInit() {
+  }
+
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Output } from "@angular/core";
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'rb-header',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  @Output() featureSelected = new EventEmitter<string>();
+  
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
+  }
 }

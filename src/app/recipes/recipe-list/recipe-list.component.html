@@ -3,17 +3,12 @@
         <button class="btn-success">New Recipe</button>
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">Recipe Name</h4>
-                <p class="list-group-item-text">Description of the recipe goes here. It should be short and concise.</p>
-            </div>
-            <span class="pull-right">
-                <img src="https://via.placeholder.com/100" alt="Recipe Image" class="img-responsive" style="max-height: 50px;">
-            </span>
-        </a>
-        <rb-recipe-item></rb-recipe-item>
+        <rb-recipe-item
+        *ngFor="let recipeEl of recipes"
+        [recipe]="recipeEl"
+        (recipeSelected)="onRecipeSelected(recipeEl)"></rb-recipe-item>
     </div>
 </div>
