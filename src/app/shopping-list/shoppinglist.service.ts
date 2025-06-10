@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs';
@@ -25,6 +25,7 @@ export class ShoppingListService {
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientChanged.next(this.ingredients.slice());
+    this.ingredientChanged.next(this.ingredients.slice());
   }
 
   addIngredients(ingredients: Ingredient[]) {
@@ -32,6 +33,7 @@ export class ShoppingListService {
     //   this.addIngredient(ingredient);
     // }
     this.ingredients.push(...ingredients);
+    this.ingredientChanged.next(this.ingredients.slice());
     this.ingredientChanged.next(this.ingredients.slice());
   }
 }
