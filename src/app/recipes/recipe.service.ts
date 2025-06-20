@@ -12,7 +12,7 @@ export class RecipeService {
 
     public recipeSelected = new Subject<Recipe>();
 
-    private recipes: Recipe[] = [
+    /*private recipes: Recipe[] = [
         new Recipe(
             'Snitzel', 
             'This is simply a test', 
@@ -30,7 +30,14 @@ export class RecipeService {
                 new Ingredient('Meat', 1)
             ]
         )
-    ];
+    ];*/
+
+    private recipes: Recipe[] = [];
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipeChanged.next(this.recipes.slice());
+    }
 
     getRecipes() {
         return this.recipes.slice(); // return a copy of the recipes array
